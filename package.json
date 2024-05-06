@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Проект \"Игры разума\"",
   "main": "index.js",
   "type": "module",
@@ -11,5 +11,8 @@
     "brain-games": "bin/brain-games.js"
   },
   "author": "Anastasia S.",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
