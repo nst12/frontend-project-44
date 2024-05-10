@@ -1,11 +1,6 @@
 import readlineSync from "readline-sync";
-import {greeting} from "./cli.js";
-
-const getRandomNumber = () => {
-//   Реализация получения случайного числа (допустим, от 0 до 99)
-    const max = 99;
-    return Math.floor(Math.random() * max);
-};
+import {greeting} from "../cli.js";
+import {getRandomNumber, startGame} from "../index.js";
 
 const isEven = (number) => {
     return number % 2 === 0;
@@ -16,7 +11,8 @@ const getCorrectAnswer = (number) => {
 };
 
 const getAttempt = () => {
-    let number = getRandomNumber();
+    // Допустим, диапазон чисел от 0 до 99
+    let number = getRandomNumber(99);
 
     console.log(`Question: ${number}`);
     const answer = readlineSync.question("Your answer: ");
@@ -31,19 +27,10 @@ const getAttempt = () => {
 };
 
 const brainEven = () => {
-    console.log("Welcome to the Brain Games!");
-    const username = greeting();
-
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-    for (let i = 1; i <= 3; i += 1) {
-        const result = getAttempt();
-        if (!result) {
-            console.log(`Let's try again, ${username}!`);
-            return;
-        }
-    }
-    console.log(`Congratulations, ${username}!`);
+    startGame(
+        getAttempt,
+        'Answer "yes" if the number is even, otherwise answer "no".'
+    );
 };
 
 export {brainEven};
