@@ -5,3 +5,5 @@
 [brain-even demo](https://asciinema.org/a/g9haU0JSVZGw4v9W359EzJt1C)
 
 [brain-calc demo](https://asciinema.org/a/oFrp04c6vtmJ6YSdorugkNlWc)
+
+[brain-gcd demo](https://asciinema.org/a/L8I5QeIg80imCPMTHnS4mwXvw)

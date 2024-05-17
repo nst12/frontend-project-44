@@ -1,8 +1,11 @@
 import {greeting} from "./cli.js";
 
-export const getRandomNumber = (max) => {
-//   Реализация получения случайного числа (допустим, от 0 до max)
-    return Math.floor(Math.random() * max);
+export const getRandomNumber = (max, min = 0) => {
+//   Реализация получения случайного числа в диапазоне от min до max
+//   На вход могут приниматься и целые, и дробные числа
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 export const startGame = (attemptFunction, firstQuestion) => {
