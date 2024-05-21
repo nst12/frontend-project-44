@@ -8,4 +8,6 @@
 
 [brain-gcd demo](https://asciinema.org/a/L8I5QeIg80imCPMTHnS4mwXvw)
 
-[brain-progression](https://asciinema.org/a/nZjO48JfozKpDrj4NtigCq9Y9)
+[brain-progression demo](https://asciinema.org/a/nZjO48JfozKpDrj4NtigCq9Y9)
+
+[brain-prime demo](https://asciinema.org/a/PLEa3paEgTp2oIBNjfmEwVx2o)
