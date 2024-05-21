@@ -1,9 +1,9 @@
 import readlineSync from "readline-sync";
-import {getRandomNumber, startGame} from "../index.js";
+import {checkAnswer, getRandomNumber, startGame} from "../index.js";
 
 const getRandomOperator = () => {
     const array = ['+', '-', '*'];
-    const i = getRandomNumber(array.length);
+    const i = getRandomNumber(array.length - 1, 0);
     return array[i];
 };
 
@@ -24,15 +24,7 @@ const getAttempt = () => {
     const number2 = getRandomNumber(50);
     const correctResult = calc(number1, operator, number2);
 
-    console.log(`Question: ${number1} ${operator} ${number2}`);
-    const answer = readlineSync.question("Your answer: ");
-    if (Number(answer) === correctResult) {
-        console.log("Correct!");
-        return true;
-    } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctResult}'.`);
-        return false;
-    }
+    return checkAnswer(`${number1} ${operator} ${number2}`, String(correctResult));
 };
 
 const brainCalc = () => {

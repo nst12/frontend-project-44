@@ -1,4 +1,4 @@
-import {getRandomNumber, startGame} from "../index.js";
+import {checkAnswer, getRandomNumber, startGame} from "../index.js";
 import readlineSync from "readline-sync";
 
 const calc = (number1, number2) => {
@@ -21,15 +21,7 @@ const getAttempt = () => {
     const number2 = getRandomNumber(100, 1);
     const correctResult = calc(number1, number2);
 
-    console.log(`Question: ${number1} ${number2}`);
-    const answer = readlineSync.question("Your answer: ");
-    if (Number(answer) === correctResult) {
-        console.log("Correct!");
-        return true;
-    } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctResult}'.`);
-        return false;
-    }
+    return checkAnswer(`${number1} ${number2}`, String(correctResult));
 };
 
 export const brainGcd = () => {

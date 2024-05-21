@@ -1,4 +1,4 @@
-import {getRandomNumber, startGame} from "../index.js";
+import {checkAnswer, getRandomNumber, startGame} from "../index.js";
 import readlineSync from "readline-sync";
 
 
@@ -16,15 +16,7 @@ const getAttempt = () => {
 
     const correctAnswer = isPrime ? 'yes' : 'no';
 
-    console.log(`Question: ${randomNumber}`);
-    const answer = readlineSync.question("Your answer: ");
-    if (answer === correctAnswer) {
-        console.log("Correct!");
-        return true;
-    } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-        return false;
-    }
+    return checkAnswer(randomNumber, correctAnswer);
 };
 
 export const brainPrime = () => {

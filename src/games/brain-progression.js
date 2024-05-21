@@ -1,4 +1,4 @@
-import {getRandomNumber, startGame} from "../index.js";
+import {checkAnswer, getRandomNumber, startGame} from "../index.js";
 import readlineSync from "readline-sync";
 
 const getRandomProgression = (min, max, stepMin, stepMax, length) => {
@@ -21,15 +21,7 @@ const getAttempt = () => {
     const correctResult = progression[emptyIndex];
     progression[emptyIndex] = '..';
 
-    console.log(`Question: ${progression.join(" ")}`);
-    const answer = readlineSync.question("Your answer: ");
-    if (Number(answer) === correctResult) {
-        console.log("Correct!");
-        return true;
-    } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctResult}'.`);
-        return false;
-    }
+    return checkAnswer(`${progression.join(" ")}`, String(correctResult));
 };
 
 export const brainProgression = () => {
