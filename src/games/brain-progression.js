@@ -1,5 +1,4 @@
-import { checkAnswer, getRandomNumber, startGame } from "../index.js";
-import readlineSync from "readline-sync";
+import { checkAnswer, getRandomNumber, startGame } from '../index.js';
 
 const getRandomProgression = (min, max, stepMin, stepMax, length) => {
   const firstItem = getRandomNumber(max, min);
@@ -19,11 +18,13 @@ const getAttempt = () => {
   const emptyIndex = getRandomNumber(progressionLength - 1, 0);
 
   const correctResult = progression[emptyIndex];
-  progression[emptyIndex] = "..";
+  progression[emptyIndex] = '..';
 
-  return checkAnswer(`${progression.join(" ")}`, String(correctResult));
+  return checkAnswer(`${progression.join(' ')}`, String(correctResult));
 };
 
-export const brainProgression = () => {
-  startGame(getAttempt, "What number is missing in the progression?");
+const brainProgression = () => {
+  startGame(getAttempt, 'What number is missing in the progression?');
 };
+
+export default brainProgression;

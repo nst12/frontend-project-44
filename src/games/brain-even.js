@@ -1,5 +1,4 @@
-import readlineSync from "readline-sync";
-import { checkAnswer, getRandomNumber, startGame } from "../index.js";
+import { checkAnswer, getRandomNumber, startGame } from '../index.js';
 
 const isEven = (number) => {
   return number % 2 === 0;
@@ -10,7 +9,7 @@ const getAttempt = () => {
   let number = getRandomNumber(99);
   const isEvenNumber = isEven(number);
 
-  const correctResult = isEvenNumber ? "yes" : "no";
+  const correctResult = isEvenNumber ? 'yes' : 'no';
 
   return checkAnswer(number, correctResult);
 };
@@ -22,4 +21,4 @@ const brainEven = () => {
   );
 };
 
-export { brainEven };
+export default brainEven;

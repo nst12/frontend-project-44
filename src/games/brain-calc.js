@@ -1,20 +1,23 @@
-import readlineSync from "readline-sync";
-import { checkAnswer, getRandomNumber, startGame } from "../index.js";
+import { checkAnswer, getRandomNumber, startGame } from '../index.js';
 
 const getRandomOperator = () => {
-  const array = ["+", "-", "*"];
+  const array = ['+', '-', '*'];
   const i = getRandomNumber(array.length - 1, 0);
   return array[i];
 };
 
 const calc = (number1, operator, number2) => {
-  if (operator === "+") {
-    return number1 + number2;
-  } else if (operator === "-") {
-    return number1 - number2;
-  } else if (operator === "*") {
-    return number1 * number2;
+  let result = 0;
+
+  if (operator === '+') {
+    result = number1 + number2;
+  } else if (operator === '-') {
+    result = number1 - number2;
+  } else if (operator === '*') {
+    result = number1 * number2;
   }
+
+  return result;
 };
 
 const getAttempt = () => {
@@ -31,7 +34,7 @@ const getAttempt = () => {
 };
 
 const brainCalc = () => {
-  startGame(getAttempt, "What is the result of the expression?");
+  startGame(getAttempt, 'What is the result of the expression?');
 };
 
-export { brainCalc };
+export default brainCalc;

@@ -1,5 +1,4 @@
-import { checkAnswer, getRandomNumber, startGame } from "../index.js";
-import readlineSync from "readline-sync";
+import { checkAnswer, getRandomNumber, startGame } from '../index.js';
 
 const getAttempt = () => {
   const randomNumber = getRandomNumber(100, 2);
@@ -13,14 +12,16 @@ const getAttempt = () => {
     }
   }
 
-  const correctAnswer = isPrime ? "yes" : "no";
+  const correctAnswer = isPrime ? 'yes' : 'no';
 
   return checkAnswer(randomNumber, correctAnswer);
 };
 
-export const brainPrime = () => {
+const brainPrime = () => {
   startGame(
     getAttempt,
     'Answer "yes" if given number is prime. Otherwise answer "no".',
   );
 };
+
+export default brainPrime;

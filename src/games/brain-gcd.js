@@ -1,18 +1,22 @@
-import { checkAnswer, getRandomNumber, startGame } from "../index.js";
-import readlineSync from "readline-sync";
+import { checkAnswer, getRandomNumber, startGame } from '../index.js';
 
 const calc = (number1, number2) => {
   const maxNumber = Math.max(number1, number2);
   const minNumber = Math.min(number1, number2);
+
+  let result = 0;
+
   if (maxNumber % minNumber === 0) {
-    return minNumber;
+    result = minNumber;
   } else {
     for (let i = Math.floor(minNumber / 2); i >= 1; i -= 1) {
       if (maxNumber % i === 0 && minNumber % i === 0) {
-        return i;
+        result = i;
       }
     }
   }
+
+  return result;
 };
 
 const getAttempt = () => {
@@ -24,6 +28,8 @@ const getAttempt = () => {
   return checkAnswer(`${number1} ${number2}`, String(correctResult));
 };
 
-export const brainGcd = () => {
-  startGame(getAttempt, "Find the greatest common divisor of given numbers.");
+const brainGcd = () => {
+  startGame(getAttempt, 'Find the greatest common divisor of given numbers.');
 };
+
+export default brainGcd;
