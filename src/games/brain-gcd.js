@@ -12,6 +12,7 @@ const calc = (number1, number2) => {
     for (let i = Math.floor(minNumber / 2); i >= 1; i -= 1) {
       if (maxNumber % i === 0 && minNumber % i === 0) {
         result = i;
+        break;
       }
     }
   }
