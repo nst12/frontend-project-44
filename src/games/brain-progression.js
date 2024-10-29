@@ -1,4 +1,5 @@
-import { checkAnswer, getRandomNumber, startGame } from '../index.js';
+import { checkAnswer, startGame } from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
 const getRandomProgression = (min, max, stepMin, stepMax, length) => {
   const firstItem = getRandomNumber(max, min);

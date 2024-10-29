@@ -1,19 +1,18 @@
-import { checkAnswer, getRandomNumber, startGame } from '../index.js';
+import { checkAnswer, startGame } from '../index.js';
+import { getRandomNumber } from '../utils.js';
+
+const isPrime = (num) => {
+  for (let i = 2; i <= num / 2; i += 1) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
 
 const getAttempt = () => {
   const randomNumber = getRandomNumber(100, 2);
-
-  let isPrime = true;
-
-  for (let i = 2; i <= randomNumber / 2; i += 1) {
-    if (randomNumber % i === 0) {
-      isPrime = false;
-      break;
-    }
-  }
-
-  const correctAnswer = isPrime ? 'yes' : 'no';
-
+  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
   return checkAnswer(randomNumber, correctAnswer);
 };
 

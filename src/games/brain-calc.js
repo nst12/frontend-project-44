@@ -1,4 +1,5 @@
-import { checkAnswer, getRandomNumber, startGame } from '../index.js';
+import { checkAnswer, startGame } from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
 const getRandomOperator = () => {
   const array = ['+', '-', '*'];
@@ -9,12 +10,16 @@ const getRandomOperator = () => {
 const calc = (number1, operator, number2) => {
   let result = 0;
 
-  if (operator === '+') {
-    result = number1 + number2;
-  } else if (operator === '-') {
-    result = number1 - number2;
-  } else if (operator === '*') {
-    result = number1 * number2;
+  switch (operator) {
+    case '+':
+      result = number1 + number2;
+      break;
+    case '-':
+      result = number1 - number2;
+      break;
+    case '*':
+      result = number1 * number2;
+      break;
   }
 
   return result;
