@@ -4,7 +4,7 @@
 
 ### Требования
 
-- Node.js версии 16 или выше
+- Node.js версии 20 или выше
 - npm версии 8 или выше
 
 ### Hexlet tests and linter status:
