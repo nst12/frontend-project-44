@@ -21,7 +21,7 @@ const calc = (number1, operator, number2) => {
       result = number1 * number2;
       break;
     default:
-      throw 'Некорректный знак оператора';
+      throw new Error('Некорректный знак оператора');
   }
 
   return result;
