@@ -1,5 +1,5 @@
 import { checkAnswer, startGame } from '../index.js';
-import { getRandomNumber } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const getRandomOperator = () => {
   const array = ['+', '-', '*'];
@@ -20,6 +20,8 @@ const calc = (number1, operator, number2) => {
     case '*':
       result = number1 * number2;
       break;
+    default:
+      throw 'Некорректный знак оператора';
   }
 
   return result;

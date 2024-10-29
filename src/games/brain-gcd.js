@@ -1,11 +1,9 @@
 import { checkAnswer, startGame } from '../index.js';
-import { getRandomNumber } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const getGCD = (number1, number2) => {
   const maxNumber = Math.max(number1, number2);
   const minNumber = Math.min(number1, number2);
-
-  let result = 0;
 
   if (maxNumber % minNumber === 0) {
     return minNumber;
