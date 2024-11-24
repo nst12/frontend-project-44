@@ -19,7 +19,6 @@ const getGCD = (number1, number2) => {
 };
 
 const getAttempt = () => {
-  // Допустим, диапазон чисел от 1 до 100
   const number1 = getRandomNumber(100, 1);
   const number2 = getRandomNumber(100, 1);
   const correctResult = getGCD(number1, number2);

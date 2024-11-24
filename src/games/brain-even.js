@@ -1,10 +1,11 @@
+
+
 import { checkAnswer, startGame } from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const isEven = (number) => number % 2 === 0;
 
 const getAttempt = () => {
-  // Допустим, диапазон чисел от 0 до 99
   const number = getRandomNumber(99);
   const isEvenNumber = isEven(number);
 

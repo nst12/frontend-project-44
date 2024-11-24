@@ -29,7 +29,6 @@ const calc = (number1, operator, number2) => {
 
 const getAttempt = () => {
   const operator = getRandomOperator();
-  // Допустим, диапазон чисел от 0 до 50
   const number1 = getRandomNumber(50);
   const number2 = getRandomNumber(50);
   const correctResult = calc(number1, operator, number2);
