@@ -28,8 +28,8 @@ Correctly identify the parity of the numbers presented to win the game.
 
 - The game presents a random number.
 - You decide if the number is even:
-    - If even, type `yes`.
-    - If odd, type `no`.
+  - If even, type `yes`.
+  - If odd, type `no`.
 - Repeat for all rounds to complete the game.
 
 **Skills Developed:**
@@ -138,8 +138,8 @@ Correctly identify the primality of each number to complete the game successfull
 
 - A number is presented (e.g., `17`).
 - Decide if the number is prime:
-    - If prime, type `yes`.
-    - If not prime, type `no`.
+  - If prime, type `yes`.
+  - If not prime, type `no`.
 - Continue through all rounds without errors.
 
 **Skills Developed:**

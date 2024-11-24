@@ -1,5 +1,3 @@
-
-
 import { checkAnswer, startGame } from '../index.js';
 import getRandomNumber from '../utils.js';
 
