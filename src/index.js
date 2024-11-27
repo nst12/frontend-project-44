@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 import greeting from './cli.js';
 
+const attemptsCount = 3;
+
 export const checkAnswer = (question, correctResult) => {
   console.log(`Question: ${question}`);
   const answer = readlineSync.question('Your answer: ');
@@ -16,14 +18,15 @@ export const checkAnswer = (question, correctResult) => {
   return false;
 };
 
-export const startGame = (attemptFunction, firstQuestion) => {
-  const attemptsCount = 3;
-
+export const startGame = (generateRound, rules) => {
   const username = greeting();
-  console.log(firstQuestion);
+  console.log(rules.firstQuestion);
 
   for (let i = 1; i <= attemptsCount; i += 1) {
-    const result = attemptFunction();
+    const [question, answer] = generateRound();
+
+    const result = checkAnswer(question, answer);
+
     if (!result) {
       console.log(`Let's try again, ${username}!`);
       return;

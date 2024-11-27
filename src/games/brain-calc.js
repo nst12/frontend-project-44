@@ -1,5 +1,9 @@
-import { checkAnswer, startGame } from '../index.js';
+import { startGame } from '../index.js';
 import getRandomNumber from '../utils.js';
+
+const rules = {
+  firstQuestion: 'What is the result of the expression?',
+};
 
 const getRandomOperator = () => {
   const array = ['+', '-', '*'];
@@ -27,20 +31,19 @@ const calc = (number1, operator, number2) => {
   return result;
 };
 
-const getAttempt = () => {
+const generateRound = () => {
   const operator = getRandomOperator();
   const number1 = getRandomNumber(50);
   const number2 = getRandomNumber(50);
-  const correctResult = calc(number1, operator, number2);
 
-  return checkAnswer(
-    `${number1} ${operator} ${number2}`,
-    String(correctResult),
-  );
+  const question = `${number1} ${operator} ${number2}`;
+  const answer = String(calc(number1, operator, number2));
+
+  return [question, answer];
 };
 
 const brainCalc = () => {
-  startGame(getAttempt, 'What is the result of the expression?');
+  startGame(generateRound, rules);
 };
 
 export default brainCalc;

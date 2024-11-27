@@ -14,7 +14,27 @@ The **Brain Games** project is a collection of logic and math games designed to 
 
 ---
 
+## Setup
+
+### Download
+
+[Link](https://github.com/nst12/frontend-project-44/archive/refs/heads/main.zip)
+
+### Install
+
+```shell
+make install
+```
+
+---
+
 ### Game "Even or Odd"
+
+#### Usage
+
+```shell
+brain-even
+```
 
 **Description:**
 
@@ -44,6 +64,12 @@ Correctly identify the parity of the numbers presented to win the game.
 
 ### Game "Calculator"
 
+#### Usage
+
+```shell
+brain-calc
+```
+
 **Description:**
 
 In the **"Calculator"** game, your mental math skills are put to the test. The game presents random arithmetic expressions involving addition (`+`), subtraction (`-`), or multiplication (`*`). Your task is to calculate the result of each expression and provide the correct answer.
@@ -70,6 +96,12 @@ Accurately solve all arithmetic expressions to win the game.
 ---
 
 ### Game "Greatest Common Divisor (GCD)"
+
+#### Usage
+
+```shell
+brain-gcd
+```
 
 **Description:**
 
@@ -98,6 +130,12 @@ Correctly compute the GCD of each pair of numbers to successfully complete the g
 
 ### Game "Arithmetic Progression"
 
+#### Usage
+
+```shell
+brain-progression
+```
+
 **Description:**
 
 In the **"Arithmetic Progression"** game, you are presented with a sequence of numbers forming an arithmetic progression with one missing element. An arithmetic progression is a sequence where each term after the first is obtained by adding a constant difference to the preceding term. Your task is to identify and provide the missing number in the sequence.
@@ -125,6 +163,12 @@ Accurately find the missing number in each arithmetic progression to win the gam
 ---
 
 ### Game "Is It a Prime Number?"
+
+#### Usage
+
+```shell
+brain-prime
+```
 
 **Description:**
 

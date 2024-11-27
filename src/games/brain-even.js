@@ -1,22 +1,22 @@
-import { checkAnswer, startGame } from '../index.js';
+import { startGame } from '../index.js';
 import getRandomNumber from '../utils.js';
+
+const rules = {
+  firstQuestion: 'Answer "yes" if the number is even, otherwise answer "no".',
+};
 
 const isEven = (number) => number % 2 === 0;
 
-const getAttempt = () => {
+const generateRound = () => {
   const number = getRandomNumber(99);
-  const isEvenNumber = isEven(number);
 
-  const correctResult = isEvenNumber ? 'yes' : 'no';
-
-  return checkAnswer(number, correctResult);
+  const question = `${number}`;
+  const answer = isEven(number) ? 'yes' : 'no';
+  return [question, answer];
 };
 
 const brainEven = () => {
-  startGame(
-    getAttempt,
-    'Answer "yes" if the number is even, otherwise answer "no".',
-  );
+  startGame(generateRound, rules);
 };
 
 export default brainEven;
