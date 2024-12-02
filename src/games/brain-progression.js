@@ -1,13 +1,9 @@
 import { startGame } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const rules = {
-  firstQuestion: 'What number is missing in the progression?',
-};
+const rules = 'What number is missing in the progression?';
 
-const getRandomProgression = (min, max, stepMin, stepMax, length) => {
-  const firstItem = getRandomNumber(max, min);
-  const step = getRandomNumber(stepMax, stepMin);
+const getProgression = (firstItem, step, length) => {
   let i = 0;
   const result = [firstItem];
   while (i < length - 1) {
@@ -19,7 +15,10 @@ const getRandomProgression = (min, max, stepMin, stepMax, length) => {
 
 const generateRound = () => {
   const progressionLength = getRandomNumber(10, 5);
-  const progression = getRandomProgression(1, 50, 2, 10, progressionLength);
+
+  const firstItem = getRandomNumber(1, 50);
+  const step = getRandomNumber(2, 10);
+  const progression = getProgression(firstItem, step, progressionLength);
   const emptyIndex = getRandomNumber(progressionLength - 1, 0);
 
   const answer = `${progression[emptyIndex]}`;

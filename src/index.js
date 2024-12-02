@@ -20,7 +20,7 @@ export const checkAnswer = (question, correctResult) => {
 
 export const startGame = (generateRound, rules) => {
   const username = greeting();
-  console.log(rules.firstQuestion);
+  console.log(rules);
 
   for (let i = 1; i <= attemptsCount; i += 1) {
     const [question, answer] = generateRound();

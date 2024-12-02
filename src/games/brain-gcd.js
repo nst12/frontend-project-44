@@ -1,9 +1,7 @@
 import { startGame } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const rules = {
-  firstQuestion: 'Find the greatest common divisor of given numbers.',
-};
+const rules = 'Find the greatest common divisor of given numbers.';
 
 const getGCD = (number1, number2) => {
   const maxNumber = Math.max(number1, number2);

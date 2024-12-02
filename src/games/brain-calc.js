@@ -1,9 +1,7 @@
 import { startGame } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const rules = {
-  firstQuestion: 'What is the result of the expression?',
-};
+const rules = 'What is the result of the expression?';
 
 const getRandomOperator = () => {
   const array = ['+', '-', '*'];
@@ -25,7 +23,7 @@ const calc = (number1, operator, number2) => {
       result = number1 * number2;
       break;
     default:
-      throw new Error('Некорректный знак оператора');
+      throw new Error(`Invalid operator - ${operator}`);
   }
 
   return result;
